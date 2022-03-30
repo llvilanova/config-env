@@ -2,6 +2,12 @@
 
 BASE=$(dirname `readlink -f $0`)
 
+echo "Setting up ~/.profile ..."
+touch ~/.profile
+grep -v "^source .*/config-env/profile$" ~/.profile > ~/.profile.new
+echo "source $BASE/profile" >> ~/.profile.new
+mv ~/.profile.new ~/.profile
+echo "Setting up ~/.profile ... done"
 
 echo "Setting up ~/.bashrc ..."
 touch ~/.bashrc

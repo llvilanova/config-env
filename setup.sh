@@ -2,31 +2,8 @@
 
 BASE=$(dirname `readlink -f $0`)
 
+
 echo "Setting up ~/.bashrc ..."
-cat >$BASE/bashrc <<EOF
-#!/bin/bash
-
-# enable color support of ls and also add handy aliases
-if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
-    alias ls='ls --color=auto'
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
-fi
-
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
-# always ask for confirmation
-alias mv='mv -i'
-alias rm='rm -i'
-alias cp='cp -i'
-
-alias grep='/bin/grep --color=auto'
-alias less='/usr/bin/less -r'
-EOF
 touch ~/.bashrc
 grep -v "^source .*/config-env/bashrc$" ~/.bashrc > ~/.bashrc.new
 echo "source $BASE/bashrc" >> ~/.bashrc.new

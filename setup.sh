@@ -35,44 +35,9 @@ echo "Setting up ~/.bashrc ... done"
 
 
 echo "Setting up ~/.inputrc ..."
-cat >$BASE/inputrc <<EOF
-\$include /etc/inputrc
-
-\$if mode=emacs
-
-# mappings for "page up" and "page down" to step to the beginning/end
-# of the history
-# "\e[5~": beginning-of-history
-# "\e[6~": end-of-history
-
-# alternate mappings for "page up" and "page down" to search the history
-#"\e[5~": history-search-backward
-#"\e[6~": history-search-forward
-
-\$endif
-
-
-\$if Bash
-# alternate mappings for "up" and "down" to search the history
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-\$endif
-
-\$if gdb
-# alternate mappings for "up" and "down" to search the history
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-\$endif
-
-\$if rlwrap
-# alternate mappings for "up" and "down" to search the history
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-\$endif
-EOF
 touch ~/.inputrc
-echo "\$include $BASE/inputrc" > ~/.inputrc.new
 (grep -v '^\$include .*/config-env/inputrc$' ~/.inputrc >> ~/.inputrc.new) || true
+echo "\$include $BASE/inputrc" > ~/.inputrc.new
 mv ~/.inputrc.new ~/.inputrc
 echo "Setting up ~/.inputrc ... done"
 

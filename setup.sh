@@ -2,6 +2,10 @@
 
 BASE=$(dirname `readlink -f $0`)
 
+echo "Creating directories ..."
+mkdir -p ~/bin
+echo "Creating directories ... done"
+
 echo "Setting up ~/.profile ..."
 touch ~/.profile
 grep -v "^source .*/config-env/profile$" ~/.profile > ~/.profile.new

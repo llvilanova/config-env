@@ -5,3 +5,5 @@ fi
 
 # touch-scroll in firefox
 export MOZ_USE_XINPUT2=1
+
+export PYTHONPATH=$PYTHONPATH:~/.local/lib/python3.8/site-packages/

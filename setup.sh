@@ -65,3 +65,7 @@ echo "source $BASE/gdbinit" > ~/.gdbinit.new
 (grep -v "^source .*/config-env/gdbinit$" ~/.gdbinit >> ~/.gdbinit.new) || true
 mv ~/.gdbinit.new ~/.gdbinit
 echo "Setting up ~/.gdbinit ... done"
+
+if [ -f "$BASE/setup-private.sh" ]; then
+    "$BASE/setup-private.sh"
+fi

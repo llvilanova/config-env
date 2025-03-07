@@ -62,6 +62,6 @@ EOF
 mkdir -p $HOME/.config
 touch ~/.gdbinit
 echo "source $BASE/gdbinit" > ~/.gdbinit.new
-grep -v "^source .*/config-env/gdbinit$" ~/.gdbinit >> ~/.gdbinit.new
+(grep -v "^source .*/config-env/gdbinit$" ~/.gdbinit >> ~/.gdbinit.new) || true
 mv ~/.gdbinit.new ~/.gdbinit
 echo "Setting up ~/.gdbinit ... done"

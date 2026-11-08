@@ -4,7 +4,7 @@ if [ -f /etc/profile.d/flatpak.sh ]; then
 fi
 
 #export PYTHONPATH=$PYTHONPATH:~/.local/lib/python3.8/site-packages/
-PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 
 ##################################################

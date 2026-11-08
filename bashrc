@@ -20,3 +20,8 @@ alias cp='cp -i'
 
 alias grep='/bin/grep --color=auto'
 alias less='/usr/bin/less -r'
+
+# agents
+alias ai="opencode"
+alias ais="opencode --continue"
+alias air="opencode run --thinking"

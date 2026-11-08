@@ -3,7 +3,4 @@ if [ -f /etc/profile.d/flatpak.sh ]; then
   source /etc/profile.d/flatpak.sh
 fi
 
-# touch-scroll in firefox
-export MOZ_USE_XINPUT2=1
-
 export PYTHONPATH=$PYTHONPATH:~/.local/lib/python3.8/site-packages/
